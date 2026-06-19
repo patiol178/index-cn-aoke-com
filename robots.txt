@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://patiol178.github.io/index-cn-aoke-com/sitemap.xml

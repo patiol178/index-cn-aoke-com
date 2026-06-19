@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>aoke · 轻量导航介绍页</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fafcfb;
+      color: #1d2b3a;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2.4rem 1.5rem 4rem;
+    }
+
+    /* 顶部导航 */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid #e2e8ed;
+      margin-bottom: 3rem;
+    }
+
+    .nav-logo {
+      font-weight: 600;
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+      color: #1f3a4b;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.6rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #3d5f73;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #0b1f2b;
+    }
+
+    /* hero 区域 */
+    .hero {
+      margin-bottom: 3.2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.1rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: #0f202b;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero .sub {
+      font-size: 1.1rem;
+      color: #3f5b6b;
+      border-left: 3px solid #b3cbd9;
+      padding-left: 1rem;
+      margin-top: 0.3rem;
+    }
+
+    .hero p {
+      margin-top: 1.6rem;
+      color: #254251;
+      max-width: 600px;
+    }
+
+    /* 核心介绍 */
+    .core {
+      background: #ffffff;
+      padding: 1.8rem 2rem;
+      border-radius: 18px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+      margin-bottom: 2.8rem;
+      border: 1px solid #edf2f5;
+    }
+
+    .core h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+      color: #0a1c28;
+    }
+
+    .core p {
+      margin-bottom: 0.5rem;
+    }
+
+    .core a {
+      color: #1b5a75;
+      text-decoration: underline 1px dashed #b6cfdd;
+      text-underline-offset: 3px;
+      font-weight: 500;
+    }
+
+    .core a:hover {
+      text-decoration: underline 1px solid #0f3f54;
+    }
+
+    /* 三个场景模块 */
+    .scenes {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      margin-bottom: 3rem;
+    }
+
+    .scene-card {
+      background: white;
+      padding: 1.6rem 1.8rem;
+      border-radius: 14px;
+      border: 1px solid #eef3f7;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .scene-card:hover {
+      border-color: #c8dae7;
+      box-shadow: 0 4px 12px rgba(0, 20, 30, 0.02);
+    }
+
+    .scene-card h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      color: #14303f;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .scene-card p {
+      font-size: 0.95rem;
+      color: #334f61;
+    }
+
+    .scene-card .tag {
+      display: inline-block;
+      background: #eaf1f6;
+      border-radius: 20px;
+      padding: 0.1rem 0.7rem;
+      font-size: 0.7rem;
+      color: #254e63;
+      margin-left: 0.5rem;
+      font-weight: 400;
+    }
+
+    /* 常见说明 */
+    .faq-section {
+      margin-top: 1.6rem;
+      border-top: 1px solid #e5edf2;
+      padding-top: 2rem;
+    }
+
+    .faq-section h2 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+      color: #0a1c28;
+    }
+
+    .faq-item {
+      margin-bottom: 1.2rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 500;
+      color: #1a3f52;
+      margin-bottom: 0.25rem;
+    }
+
+    .faq-item p {
+      color: #3a5769;
+      font-size: 0.94rem;
+    }
+
+    /* 页脚 */
+    .footer {
+      margin-top: 3.2rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e2e9ef;
+      font-size: 0.82rem;
+      color: #5b788b;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .footer a {
+      color: #2f5c72;
+      text-decoration: none;
+      border-bottom: 1px dotted #b7ccd9;
+    }
+
+    .footer a:hover {
+      border-bottom: 1px solid #1b4d64;
+    }
+
+    /* 响应式 */
+    @media (max-width: 500px) {
+      .page {
+        padding: 1.6rem 1.2rem 3rem;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 1rem 1.2rem;
+      }
+
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+
+      .core {
+        padding: 1.2rem 1.2rem;
+      }
+
+      .scene-card {
+        padding: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- 顶部导航 -->
+    <nav class="nav">
+      <span class="nav-logo">aoke·简</span>
+      <div class="nav-links">
+        <a href="#core">介绍</a>
+        <a href="#scenes">场景</a>
+        <a href="#faq">常见说明</a>
+      </div>
+    </nav>
+
+    <!-- hero -->
+    <div class="hero">
+      <h1>理解 <span style="font-weight:450;">aoke</span> 的用途</h1>
+      <div class="sub">轻量 · 聚焦 · 信息入口</div>
+      <p>对于第一次接触这个站点的用户，快速了解它的定位、可提供的内容方向，以及它与其他工具站点的区别。以下从三个典型场景展开。</p>
+    </div>
+
+    <!-- 核心介绍 含链接 -->
+    <div class="core" id="core">
+      <h2>核心介绍</h2>
+      <p><a href="https://index-cn-aoke.com">aoke</a> 本身是一个索引性质的页面，它聚合了若干领域的快捷入口与简要说明。不追求大而全，而是希望用克制的信息密度，让来访者快速判断是否与自己的需求匹配。</p>
+      <p>你可以将它看作一个「轻量导航」——没有多余广告、没有强制注册，所有链接和说明都围绕实用信息展开。如果你偏向直接、简约的信息获取方式，这里或许是一个不错的起点。</p>
+    </div>
+
+    <!-- 三个场景模块 -->
+    <div class="scenes" id="scenes">
+      <div class="scene-card">
+        <h3>场景一 · 快速查证 <span class="tag">信息检索</span></h3>
+        <p>当你需要核实某个基础概念或常见服务的官方入口，却不想陷入搜索引擎的广告干扰时，aoke 整理的短链接和简要备注能帮你节省时间。每个条目均附有来源说明，便于进一步核对。</p>
+      </div>
+      <div class="scene-card">
+        <h3>场景二 · 轻量参考 <span class="tag">日常工具</span></h3>
+        <p>对于文档、格式转换、简单计算等高频需求，aoke 提供了一组经过筛选的在线工具索引。这些工具大多免费、无需安装，适合在快速完成单一任务时使用。</p>
+      </div>
+      <div class="scene-card">
+        <h3>场景三 · 结构漫游 <span class="tag">内容探索</span></h3>
+        <p>如果你对某个主题（如开源项目、学习资源、数据查询）只有模糊的兴趣，aoke 的分类结构可以帮助你建立一个整体轮廓。它不替代深度阅读，但可以成为你深入探索前的第一个路标。</p>
+      </div>
+    </div>
+
+    <!-- 常见说明 FAQ摘要 -->
+    <div class="faq-section" id="faq">
+      <h2>常见说明</h2>
+      <div class="faq-item">
+        <strong>这个页面会频繁更新吗？</strong>
+        <p>索引内容会根据实际链接有效性和用户反馈做不定期调整，但不会高频变动。更新日志会以简单形式列在页面底部区域。</p>
+      </div>
+      <div class="faq-item">
+        <strong>链接是否包含推广或分成？</strong>
+        <p>不包含。aoke 的所有外链均以信息准确性为首要标准，不接受付费插入或商业置换。你可以放心使用。</p>
+      </div>
+      <div class="faq-item">
+        <strong>如何反馈链接失效或建议？</strong>
+        <p>目前暂无独立反馈表单，不过你可以在社区相关讨论中提及 aoke 的条目名称，维护者会定期查看并处理。</p>
+      </div>
+      <div style="margin-top:1.2rem; font-size:0.9rem; color:#476574; background:#f1f7fb; padding:0.6rem 1rem; border-radius:20px;">
+        ⚡ 提示：以上说明仅针对该索引站点本身，具体引用内容的可靠性请以原始来源为准。
+      </div>
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer">
+      <span>aoke · 索引页 (无备案要求)</span>
+      <span>内容持续整理中 · 如有疑问请以原始页面为准</span>
+    </div>
+  </div>
+</body>
+</html>
